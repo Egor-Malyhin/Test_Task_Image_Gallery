@@ -1,20 +1,24 @@
 package org.mycorp.config;
 
-import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 
-public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-    @Override
-    protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{ApplicationConfig.class};
-    }
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
 
+public class WebInitializer implements WebApplicationInitializer {
     @Override
-    protected Class<?>[] getServletConfigClasses() {
-        return new Class[0];
-    }
+    public void onStartup(ServletContext servletContext) throws ServletException {
+        AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
+        ctx.register(HibernateConfig.class);
+        ctx.register(JINQConfig.class);
+        ctx.register(ApplicationConfig.class);
+        ctx.setServletContext(servletContext);
 
-    @Override
-    protected String[] getServletMappings() {
-        return new String[]{"/"};
+        ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(ctx));
+        servlet.setLoadOnStartup(1);
+        servlet.addMapping("/");
     }
 }

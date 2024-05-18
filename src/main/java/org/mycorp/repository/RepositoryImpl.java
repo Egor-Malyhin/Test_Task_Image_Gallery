@@ -1,11 +1,12 @@
 package org.mycorp.repository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import org.jinq.jpa.JPAJinqStream;
 import org.jinq.jpa.JinqJPAStreamProvider;
 import org.mycorp.models.BaseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,16 +20,15 @@ public abstract class RepositoryImpl<T extends BaseEntity> implements Repository
     protected abstract Class<T> entityType();
 
     @Override
+    @Transactional
     public void saveEntity(T entity) {
         entityManager.persist(entity);
     }
 
     @Override
-    public Optional<T> getEntity(long id) {
-        return stream().
-                where(c -> c.getId() == id).
-                findFirst();
-    }
+    public Optional<T> getEntity(Long id) {
+        return stream().where((T entity) -> entity.getId().equals(id)).findOne();
+    };
 
     @Override
     public List<T> getAllEntities() {
@@ -36,11 +36,9 @@ public abstract class RepositoryImpl<T extends BaseEntity> implements Repository
     }
 
     @Override
-    public boolean deleteEntity(long entityId) {
-        Optional<T> findEntity = getEntity(entityId);
-        if (getEntity(entityId).isEmpty())
-            return false;
-        entityManager.remove(findEntity.get());
+    @Transactional
+    public boolean deleteEntity(Long entityId) {
+        entityManager.remove(getEntity(entityId).get());
         return true;
     }
 

@@ -1,8 +1,11 @@
 package org.mycorp.config;
 
-import jakarta.persistence.EntityManagerFactory;
+import javax.persistence.EntityManagerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -14,7 +17,8 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@EnableTransactionManagement
+@EnableTransactionManagement(proxyTargetClass = true)
+@ComponentScan("org.mycorp")
 public class HibernateConfig {
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
@@ -33,9 +37,9 @@ public class HibernateConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/your_database"); // Замените на ваш URL базы данных
-        dataSource.setUsername("your_username"); // Замените на ваше имя пользователя
-        dataSource.setPassword("your_password"); // Замените на ваш пароль
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/ImagesDB");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("12345");
 
         return dataSource;
     }
@@ -51,8 +55,9 @@ public class HibernateConfig {
     private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-
+        properties.setProperty("hibernate.transaction.coordinator_class", "jdbc");
+        properties.setProperty("hibernate.jdbc.use_streams_for_binary", "false");
         return properties;
     }
 }
+//properties.put("hibernate.transaction.jta.platform", "org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform");

@@ -1,31 +1,39 @@
 package org.mycorp.controllers;
 
 import org.mycorp.models.User;
-import org.mycorp.services.MyUserDetailsService;
+import org.mycorp.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("registry")
 public class RegistryController {
-    private final MyUserDetailsService myUserDetailsService;
+    private final UserServiceImpl userServiceImpl;
 
     @Autowired
-    public RegistryController(MyUserDetailsService myUserDetailsService) {
-        this.myUserDetailsService = myUserDetailsService;
+    public RegistryController(UserServiceImpl userServiceImpl) {
+        this.userServiceImpl = userServiceImpl;
     }
 
-    @GetMapping("/registry")
+    @GetMapping
     public String showRegistryPage(Model model) {
         model.addAttribute(new User());
-        return "";
+        return "registry";
     }
 
-    @PostMapping("/registry")
-    public String registration(User userForm, Model model) {
-        myUserDetailsService.saveUser(userForm);
-        return "";
+    @PostMapping
+    public String registration(@ModelAttribute User userForm, Model model) {
+        userForm.setRole("ROLE_USER");
+        if (!userServiceImpl.saveUser(userForm)) {
+            model.addAttribute("usernameError", "Пользователь с таким именем уже существует");
+            return "registry";
+        }
+        userServiceImpl.saveUser(new User("admin", "12345", "ROLE_ADMIN"));
+        return "redirect:/all-images";
     }
 }

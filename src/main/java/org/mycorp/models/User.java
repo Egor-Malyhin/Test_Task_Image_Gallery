@@ -1,6 +1,6 @@
 package org.mycorp.models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,49 +22,67 @@ import java.util.List;
 @Getter
 @Setter
 @Table(name = "users")
+@Access(AccessType.PROPERTY)
 public class User extends BaseEntity implements UserDetails {
-    @Column(name = "login")
     private String username;
-
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "role")
     private String role;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Fetch(FetchMode.SUBSELECT)
     private List<Image> imageList;
 
-    public User(long id, String username, String password, String role) {
-        super(id);
+    public User(String username, String password, String role) {
         this.username = username;
         this.password = password;
         this.role = role;
         this.imageList = new ArrayList<>();
     }
 
+    @Column(name = "login")
+    public String getUsername() {
+        return username;
+    }
+
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    @Column(name = "role")
+    public String getRole() {
+        return role;
+    }
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Fetch(FetchMode.SUBSELECT)
+    public List<Image> getImageList() {
+        return imageList;
+    }
+
     @Override
+    @Transient
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(new SimpleGrantedAuthority(role));
     }
 
     @Override
+    @Transient
     public boolean isAccountNonExpired() {
         return true;
     }
 
     @Override
+    @Transient
     public boolean isAccountNonLocked() {
         return true;
     }
 
     @Override
+    @Transient
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
     @Override
+    @Transient
     public boolean isEnabled() {
         return true;
     }

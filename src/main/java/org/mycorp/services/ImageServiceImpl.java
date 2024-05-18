@@ -4,6 +4,7 @@ import org.mycorp.models.Image;
 import org.mycorp.repository.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,17 +23,19 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    public void deleteImage(long imageId) {
+    public List<Image> getUserImages(Long userId) {
+        return imageRepository.getUserImages(userId);
+    }
+
+    @Override
+    @Transactional
+    public void deleteImage(Long imageId) {
         imageRepository.deleteEntity(imageId);
     }
 
     @Override
+    @Transactional
     public void saveImage(Image image) {
         imageRepository.saveEntity(image);
-    }
-
-    @Override
-    public Image getImage(long imageId) {
-        return imageRepository.getEntity(imageId).get();
     }
 }

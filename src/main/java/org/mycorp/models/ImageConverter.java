@@ -1,9 +1,11 @@
 package org.mycorp.models;
 
-import jakarta.persistence.AttributeConverter;
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
 
 import java.util.Base64;
 
+@Converter
 public class ImageConverter implements AttributeConverter<String, byte[]> {
 
     @Override

@@ -1,7 +1,9 @@
 package org.mycorp.models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
+
+import java.time.LocalDateTime;
 //import org.hibernate.annotations.Type;
 
 
@@ -9,26 +11,34 @@ import lombok.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
 @Setter
 @Table(name = "images")
+@Access(AccessType.PROPERTY)
 public class Image extends BaseEntity {
-    @Column(name = "name")
     private String name;
+    private String imageData;
+    private User user;
+    private LocalDateTime uploadDate;
 
-    @Lob
+    @Column(name = "name")
+    public String getName() {
+        return name;
+    }
+
     @Convert(converter = ImageConverter.class)
     @Column(name = "image_data", columnDefinition = "bytea")
-    private String imageData;
+    public String getImageData() {
+        return imageData;
+    }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_user")
-    private User user;
+    public User getUser() {
+        return user;
+    }
 
-    /*public Image(long id, String name, byte[] imageData, User user) {
-        super(id);
-        this.name = name;
-        this.imageData = imageData;
-        this.user = user;
-    }*/
+    @Column(name = "upload_date")
+    public LocalDateTime getUploadDate() {
+        return uploadDate;
+    }
 }

@@ -7,9 +7,9 @@ import java.util.List;
 public interface ImageService {
     List<Image> getAllImages();
 
-    void deleteImage(long imageId);
+    List<Image> getUserImages(Long userId);
+
+    void deleteImage(Long imageId);
 
     void saveImage(Image image);
-
-    Image getImage(long imageId);
 }

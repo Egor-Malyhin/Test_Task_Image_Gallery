@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface Repository<T extends BaseEntity> {
     void saveEntity(T entity);
 
-    Optional<T> getEntity(long id);
+    Optional<T> getEntity(Long id);
 
     List<T> getAllEntities();
 
-    boolean deleteEntity(long entityId);
+    boolean deleteEntity(Long entityId);
 }

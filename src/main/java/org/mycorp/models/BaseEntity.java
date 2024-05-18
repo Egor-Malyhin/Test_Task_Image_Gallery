@@ -1,17 +1,22 @@
 package org.mycorp.models;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import javax.persistence.*;
+
+import lombok.*;
 
 @MappedSuperclass
-@Data
+@Setter
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+@Access(AccessType.PROPERTY)
 public abstract class BaseEntity {
+    private Long id;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    public Long getId() {
+        return id;
+    }
 }
