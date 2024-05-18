@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                       .disable()
                 .authorizeRequests()
                       .antMatchers("/registry").not().fullyAuthenticated()
-                .antMatchers(HttpMethod.POST, "/all-images").hasRole("ROLE_ADMIN")
+                .antMatchers(HttpMethod.POST, "/all-images").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

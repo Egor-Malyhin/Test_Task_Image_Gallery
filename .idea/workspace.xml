@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f85fadd-e3e3-45b4-bbf0-0aaa12e5f4cd" name="Changes" comment="Working Version of Test task">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/view-all-images.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/repository/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/repository/RepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/repository/RepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/testImage.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registry.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registry.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/upload-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/upload-form.jsp" afterDir="false" />
+    <list default="true" id="8f85fadd-e3e3-45b4-bbf0-0aaa12e5f4cd" name="Changes" comment="Minor Code Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/config/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,12 +170,21 @@
       <option name="project" value="LOCAL" />
       <updated>1716037169134</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Minor Code Changes">
+      <option name="closed" value="true" />
+      <created>1716037441177</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716037441177</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First version of Test Task. Added repositories, services, controllers and configuration. todo: add SpringSecurity support." />
     <MESSAGE value="Working Version of Test task" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working Version of Test task" />
+    <MESSAGE value="Minor Code Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor Code Changes" />
   </component>
 </project>
