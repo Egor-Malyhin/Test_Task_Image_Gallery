@@ -6,7 +6,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Upload Picture</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webapp/WEB-INF/view/css/styles.css">
     <script type="text/javascript">
         function encodeImageFileAsURL() {
             var fileInput = document.getElementById('file');

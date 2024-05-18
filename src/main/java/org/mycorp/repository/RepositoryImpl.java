@@ -37,9 +37,8 @@ public abstract class RepositoryImpl<T extends BaseEntity> implements Repository
 
     @Override
     @Transactional
-    public boolean deleteEntity(Long entityId) {
+    public void deleteEntity(Long entityId) {
         entityManager.remove(getEntity(entityId).get());
-        return true;
     }
 
     protected JPAJinqStream<T> stream() {

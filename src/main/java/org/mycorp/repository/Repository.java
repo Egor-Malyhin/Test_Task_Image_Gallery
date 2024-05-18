@@ -12,5 +12,5 @@ public interface Repository<T extends BaseEntity> {
 
     List<T> getAllEntities();
 
-    boolean deleteEntity(Long entityId);
+    void deleteEntity(Long entityId);
 }
