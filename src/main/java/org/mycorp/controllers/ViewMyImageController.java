@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("my-images")
+@RequestMapping("/my-images")
 public class ViewMyImageController extends ImageController {
     private final ImageService imageService;
 

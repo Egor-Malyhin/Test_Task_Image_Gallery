@@ -10,10 +10,11 @@ public abstract class ImageController {
         int pageSize = 10;
         int startIndex = (currentPage - 1) * pageSize;
         int endIndex = Math.min(startIndex + pageSize, unsortImages.size());
+        int totalPages = (int) Math.ceil((double) unsortImages.size() / pageSize);
 
         List<Image> images = unsortImages.subList(startIndex, endIndex);
         model.addAttribute("images", images);
-        model.addAttribute("totalPages", (unsortImages.size() / pageSize) + 1);
+        model.addAttribute("totalPages", totalPages);
         model.addAttribute("currentPage", currentPage);
     }
 }

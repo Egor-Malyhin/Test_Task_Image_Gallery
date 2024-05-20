@@ -23,8 +23,8 @@ public class RegistryController {
     private final UserService userService;
 
     @Autowired
-    public RegistryController(UserServiceImpl userServiceImpl) {
-        this.userService = userServiceImpl;
+    public RegistryController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping
