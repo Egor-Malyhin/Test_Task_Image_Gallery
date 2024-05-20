@@ -2,7 +2,6 @@ package org.mycorp.models;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
-
 import java.util.Base64;
 
 @Converter

@@ -8,7 +8,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mycorp.models.User;
 import org.mycorp.repository.UserRepository;
-import org.mycorp.services.UserService;
 import org.mycorp.services.UserServiceImpl;
 import org.springframework.security.crypto.password.PasswordEncoder;
 

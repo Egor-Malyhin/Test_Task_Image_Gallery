@@ -9,13 +9,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mycorp.models.Image;
 import org.mycorp.models.User;
-import org.mycorp.repository.ImageRepository;
 import org.mycorp.repository.UserRepository;
 
 import javax.persistence.EntityManager;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;

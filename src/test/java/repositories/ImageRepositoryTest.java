@@ -15,8 +15,8 @@ import org.mycorp.repository.ImageRepository;
 
 import javax.persistence.EntityManager;
 import java.time.LocalDateTime;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;

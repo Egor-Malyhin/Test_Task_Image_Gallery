@@ -1,8 +1,11 @@
 package org.mycorp.models;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import lombok.*;
+import javax.persistence.*;
 
 @MappedSuperclass
 @Setter

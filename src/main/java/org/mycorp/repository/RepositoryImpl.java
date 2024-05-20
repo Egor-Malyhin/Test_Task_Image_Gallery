@@ -1,13 +1,13 @@
 package org.mycorp.repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import org.jinq.jpa.JPAJinqStream;
 import org.jinq.jpa.JinqJPAStreamProvider;
 import org.mycorp.models.BaseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,7 +36,7 @@ public abstract class RepositoryImpl<T extends BaseEntity> implements Repository
 
     protected Optional<T> getEntity(Long id) {
         return stream().where((T entity) -> entity.getId().equals(id)).findOne();
-    };
+    }
 
     protected abstract Class<T> entityType();
 

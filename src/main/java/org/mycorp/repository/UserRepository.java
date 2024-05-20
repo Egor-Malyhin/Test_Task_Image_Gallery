@@ -1,6 +1,5 @@
 package org.mycorp.repository;
 
-import org.mycorp.models.Image;
 import org.mycorp.models.User;
 import org.springframework.stereotype.Repository;
 

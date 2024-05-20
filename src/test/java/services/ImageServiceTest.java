@@ -12,14 +12,12 @@ import org.mycorp.config.JINQConfig;
 import org.mycorp.models.Image;
 import org.mycorp.models.User;
 import org.mycorp.repository.ImageRepository;
-import org.mycorp.services.ImageService;
 import org.mycorp.services.ImageServiceImpl;
 import org.springframework.test.context.ContextConfiguration;
 
 import java.time.LocalDateTime;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
 
 @ExtendWith(MockitoExtension.class)
 @ContextConfiguration(classes = {ApplicationConfig.class, HibernateConfig.class, JINQConfig.class})
