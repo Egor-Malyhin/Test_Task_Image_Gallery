@@ -17,18 +17,11 @@ public abstract class RepositoryImpl<T extends BaseEntity> implements Repository
     @PersistenceContext
     private EntityManager entityManager;
 
-    protected abstract Class<T> entityType();
-
     @Override
     @Transactional
     public void saveEntity(T entity) {
         entityManager.persist(entity);
     }
-
-    @Override
-    public Optional<T> getEntity(Long id) {
-        return stream().where((T entity) -> entity.getId().equals(id)).findOne();
-    };
 
     @Override
     public List<T> getAllEntities() {
@@ -40,6 +33,12 @@ public abstract class RepositoryImpl<T extends BaseEntity> implements Repository
     public void deleteEntity(Long entityId) {
         entityManager.remove(getEntity(entityId).get());
     }
+
+    protected Optional<T> getEntity(Long id) {
+        return stream().where((T entity) -> entity.getId().equals(id)).findOne();
+    };
+
+    protected abstract Class<T> entityType();
 
     protected JPAJinqStream<T> stream() {
         return jinqDataProvider.streamAll(entityManager, entityType());

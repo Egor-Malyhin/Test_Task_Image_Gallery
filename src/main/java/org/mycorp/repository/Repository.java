@@ -8,8 +8,6 @@ import java.util.Optional;
 public interface Repository<T extends BaseEntity> {
     void saveEntity(T entity);
 
-    Optional<T> getEntity(Long id);
-
     List<T> getAllEntities();
 
     void deleteEntity(Long entityId);

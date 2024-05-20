@@ -1,0 +1,4 @@
+repositories\ImageRepositoryTest.class
+repositories\UserRepositoryTest.class
+services\UserServiceTest.class
+services\ImageServiceTest.class

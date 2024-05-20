@@ -1,6 +1,5 @@
 package org.mycorp.controllers;
 
-import com.google.gson.Gson;
 import org.mycorp.models.Image;
 import org.mycorp.services.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;

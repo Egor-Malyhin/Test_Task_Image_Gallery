@@ -6,9 +6,10 @@
    <head>
       <meta charset="UTF-8">
       <title>My Images</title>
+      <style><%@include file="/WEB-INF/view/css/style.css"%></style>
    </head>
    <body>
-      <h2>Images</h2>
+      <h2>My Images</h2>
       <div id="imageContainer">
          <c:set var="counter" value="1"/>
          <c:forEach items="${images}" var="image">
@@ -46,6 +47,9 @@
       <div>
          <a href="${pageContext.request.contextPath}/upload">Upload</a>
          <a href="${pageContext.request.contextPath}/all-images">All Images</a>
+         <form action="${pageContext.request.contextPath}/logout" method="post">
+             <button type="submit">Logout</button>
+         </form>
       </div>
    </body>
 </html>

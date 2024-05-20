@@ -6,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Upload Picture</title>
+    <style><%@include file="/WEB-INF/view/css/style.css"%></style>
     <script type="text/javascript">
         function encodeImageFileAsURL() {
             var fileInput = document.getElementById('file');
@@ -39,6 +40,9 @@
     <div>
          <a href="${pageContext.request.contextPath}/all-images">All Images</a>
          <a href="${pageContext.request.contextPath}/my-images">My Images</a>
+         <form action="${pageContext.request.contextPath}/logout" method="post">
+              <button type="submit">Logout</button>
+         </form>
     </div>
 </body>
 </html>

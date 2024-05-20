@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f85fadd-e3e3-45b4-bbf0-0aaa12e5f4cd" name="Changes" comment="Minor Code Changes">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/repositories/ImageRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/repositories/UserRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/services/ImageServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/services/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/controllers/RegistryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/controllers/RegistryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/controllers/ViewImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/controllers/ViewImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/repository/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/repository/ImageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/mycorp/repository/RepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/mycorp/repository/RepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registry.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/registry.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/upload-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/upload-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/view-all-images.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/view-all-images.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/view-my-images.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/view-my-images.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +40,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="#JAVA_HOME" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="#JAVA_HOME" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -37,21 +65,33 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.ImageRepTest.testRep.executor": "Run",
+    "JUnit.ImageRepositoryTest.deleteImageTest.executor": "Run",
     "JUnit.ImageRepositoryTest.executor": "Run",
+    "JUnit.ImageRepositoryTest.getAllImagesTest.executor": "Run",
+    "JUnit.ImageRepositoryTest.getUserImages.executor": "Run",
+    "JUnit.ImageRepositoryTest.saveImageTest.executor": "Run",
     "JUnit.ImageRepositoryTest.saveTest.executor": "Run",
+    "JUnit.ImageServiceTest.deleteImageTest.executor": "Run",
+    "JUnit.ImageServiceTest.executor": "Run",
+    "JUnit.ImageServiceTest.getAllImages.executor": "Run",
     "JUnit.ImageServiceTest.getAllImagesTest.executor": "Run",
+    "JUnit.ImageServiceTest.getImagesByUser.executor": "Run",
     "JUnit.ImageServiceTest.saveImageTest.executor": "Run",
+    "JUnit.UserRepositoryTest.getUserByNicknameTest.executor": "Run",
+    "JUnit.UserRepositoryTest.saveUserTest.executor": "Run",
+    "JUnit.UserServiceTest.getUserByUsername.executor": "Run",
+    "JUnit.UserServiceTest.saveUserTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/MyProjects/Test_Task_Image_Gallery",
+    "last_opened_file_path": "C:/MyProjects/EV_Charging_Point_Emulator_Project",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propCompiler"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.testRunning"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -65,63 +105,81 @@
       <recent name="C:\MyProjects\Test_Task_Image_Gallery\src\main\webapp\WEB-INF\view\css" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ImageServiceTest.getAllImagesTest">
-    <configuration name="ImageRepTest.testRep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Test_Task_Image_Gallery" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ImageRepTest" />
-      <option name="METHOD_NAME" value="testRep" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ImageRepositoryTest">
     <configuration name="ImageRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Test_Task_Image_Gallery" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ImageRepositoryTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="repositories" />
+      <option name="MAIN_CLASS_NAME" value="repositories.ImageRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImageRepositoryTest.saveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Test_Task_Image_Gallery" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ImageRepositoryTest" />
-      <option name="METHOD_NAME" value="saveTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ImageServiceTest.getAllImagesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ImageRepositoryTest.getAllImagesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Test_Task_Image_Gallery" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="services.*" />
+          <option name="PATTERN" value="repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.ImageServiceTest" />
+      <option name="PACKAGE_NAME" value="repositories" />
+      <option name="MAIN_CLASS_NAME" value="repositories.ImageRepositoryTest" />
       <option name="METHOD_NAME" value="getAllImagesTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImageServiceTest.saveImageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ImageRepositoryTest.getUserImages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Test_Task_Image_Gallery" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="services.*" />
+          <option name="PATTERN" value="repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.ImageServiceTest" />
-      <option name="METHOD_NAME" value="saveImageTest" />
+      <option name="PACKAGE_NAME" value="repositories" />
+      <option name="MAIN_CLASS_NAME" value="repositories.ImageRepositoryTest" />
+      <option name="METHOD_NAME" value="getUserImages" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTest.getUserByNicknameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Test_Task_Image_Gallery" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="repositories" />
+      <option name="MAIN_CLASS_NAME" value="repositories.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="getUserByNicknameTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTest.saveUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Test_Task_Image_Gallery" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="repositories.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="repositories" />
+      <option name="MAIN_CLASS_NAME" value="repositories.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="saveUserTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ImageServiceTest.getAllImagesTest" />
-        <item itemvalue="JUnit.ImageRepTest.testRep" />
         <item itemvalue="JUnit.ImageRepositoryTest" />
-        <item itemvalue="JUnit.ImageServiceTest.saveImageTest" />
-        <item itemvalue="JUnit.ImageRepositoryTest.saveTest" />
+        <item itemvalue="JUnit.ImageRepositoryTest.getUserImages" />
+        <item itemvalue="JUnit.ImageRepositoryTest.getAllImagesTest" />
+        <item itemvalue="JUnit.UserRepositoryTest.getUserByNicknameTest" />
+        <item itemvalue="JUnit.UserRepositoryTest.saveUserTest" />
       </list>
     </recent_temporary>
   </component>

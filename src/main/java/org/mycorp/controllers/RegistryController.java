@@ -1,23 +1,31 @@
 package org.mycorp.controllers;
 
 import org.mycorp.models.User;
+import org.mycorp.services.UserService;
 import org.mycorp.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("registry")
 public class RegistryController {
-    private final UserServiceImpl userServiceImpl;
+    private final UserService userService;
 
     @Autowired
     public RegistryController(UserServiceImpl userServiceImpl) {
-        this.userServiceImpl = userServiceImpl;
+        this.userService = userServiceImpl;
     }
 
     @GetMapping
@@ -27,13 +35,21 @@ public class RegistryController {
     }
 
     @PostMapping
-    public String registration(@ModelAttribute User userForm, Model model) {
+    public String registration(@ModelAttribute User userForm, Model model, HttpServletRequest request) {
         userForm.setRole("ROLE_USER");
-        if (!userServiceImpl.saveUser(userForm)) {
-            model.addAttribute("usernameError", "Пользователь с таким именем уже существует");
+        if (!userService.saveUser(userForm)) {
+            model.addAttribute("usernameError", "Already have this user");
             return "registry";
         }
-        userServiceImpl.saveUser(new User("admin", "12345", "ROLE_ADMIN"));
+
+        authenticateUser(userForm, request);
         return "redirect:/all-images";
+    }
+
+    private void authenticateUser(UserDetails user, HttpServletRequest request) {
+        UsernamePasswordAuthenticationToken authenticationToken =
+                new UsernamePasswordAuthenticationToken(user, user.getPassword(), user.getAuthorities());
+        authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+        SecurityContextHolder.getContext().setAuthentication(authenticationToken);
     }
 }
